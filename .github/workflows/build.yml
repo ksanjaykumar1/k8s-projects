@@ -38,7 +38,9 @@ jobs:
 
       - name: Build and push Docker image
         run: |
+          echo ${{ steps.increment_tag.outputs.INCREMENTED_TAG }}
           cd deployment-poc/k8s-web-hello
           pwd
           docker buildx build --platform linux/amd64,linux/arm64 -t ksanjayk/k8s-web-hello:${{ steps.increment_tag.outputs.INCREMENTED_TAG }} .
+          docker images
           docker push ksanjayk/k8s-web-hello:${{ steps.increment_tag.outputs.INCREMENTED_TAG }}
