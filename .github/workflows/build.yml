@@ -41,6 +41,6 @@ jobs:
           echo ${{ steps.increment_tag.outputs.INCREMENTED_TAG }}
           cd deployment-poc/k8s-web-hello
           pwd
-          docker build -t ksanjayk/k8s-web-hello:${{ steps.increment_tag.outputs.INCREMENTED_TAG }} .
+          docker build -t ksanjayk/k8s-web-hello:latest .
           docker images
-          docker push ksanjayk/k8s-web-hello:${{ steps.increment_tag.outputs.INCREMENTED_TAG }}
+          docker push ksanjayk/k8s-web-hello:latest
