@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3000;
 
 app.get('/', (req, res) => {
-  const helloMessage = `Version:3 openshift Hello from the ${os.hostname}`;
+  const helloMessage = `Version:4 openshift Hello from the ${os.hostname}`;
   console.log(helloMessage);
   res.send(helloMessage);
 });
